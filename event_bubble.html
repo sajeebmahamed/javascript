@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Bubbling Core Concept</title>
 </head>
+
 <body>
     <div id="container">
         <ul id="id">
@@ -16,12 +18,14 @@
         </ul>
     </div>
     <script>
-        document.getElementById('container').addEventListener('click', function(){
-            console.log("container clicked");
-        })
-        document.getElementById('first-item').addEventListener('click', function(){
+        document.getElementById('first-item').addEventListener('click', function () {
             console.log("first item clicked");
+            event.stopPropagation();
+        })
+        document.getElementById('container').addEventListener('click', function () {
+            console.log("container clicked");
         })
     </script>
 </body>
+
 </html>
