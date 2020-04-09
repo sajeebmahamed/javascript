@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling Core Concept</title>
+</head>
+<body>
+    <div id="container">
+        <ul id="id">
+            <li id="first-item" class="list-item">Lorem, ipsum dolor.</li>
+            <li class="list-item">Saepe, laboriosam corrupti!</li>
+            <li class="list-item">Obcaecati, dicta dignissimos.</li>
+            <li class="list-item">Laborum, est laboriosam?</li>
+            <li class="list-item">Nulla, eaque cumque!</li>
+        </ul>
+    </div>
+    <script>
+        document.getElementById('container').addEventListener('click', function(){
+            console.log("container clicked");
+        })
+        document.getElementById('first-item').addEventListener('click', function(){
+            console.log("first item clicked");
+        })
+    </script>
+</body>
+</html>
