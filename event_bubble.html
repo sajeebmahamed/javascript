@@ -16,15 +16,32 @@
             <li class="list-item">Laborum, est laboriosam?</li>
             <li class="list-item">Nulla, eaque cumque!</li>
         </ul>
+        <button id="add_new">Add Item</button>
     </div>
     <script>
-        document.getElementById('first-item').addEventListener('click', function () {
-            console.log("first item clicked");
-            event.stopPropagation();
+        // var item = document.getElementsByClassName('list-item');
+        // for (let i = 0; i < item.length; i++) {
+        //     const element = item[i];
+        //     element.addEventListener('click', function(event){
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+        document.getElementById('add_new').addEventListener('click', function(event){
+            var parentItem = document.getElementById('id');
+            var newItem = document.createElement('li');
+            newItem.innerText = 'New item added';
+            parentItem.appendChild(newItem);
         })
-        document.getElementById('container').addEventListener('click', function () {
-            console.log("container clicked");
+        document.getElementById('id').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target);
         })
+        // document.getElementById('first-item').addEventListener('click', function () {
+        //     console.log("first item clicked");
+        //     event.stopPropagation();
+        // })
+        // document.getElementById('container').addEventListener('click', function () {
+        //     console.log("container clicked");
+        // })
     </script>
 </body>
 
